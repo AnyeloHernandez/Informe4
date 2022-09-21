@@ -14,12 +14,19 @@ export class PublicacionesComponent implements OnInit {
   constructor(private publicacionesService: PublicacionesService) { }
 
   ngOnInit() {
-    this.publicacionesService.getPublicaciones().subscribe(
+    this.publicacionesService.getPublicaciones().subscribe({
+      next: res => {
+        this.publicaciones = res;
+      },
+      error: err => console.log(err)
+/*
       res => {
         this.publicaciones = res;
       },
       err => console.log(err)
-    );
+
+*/
+  });
   }
 
 }

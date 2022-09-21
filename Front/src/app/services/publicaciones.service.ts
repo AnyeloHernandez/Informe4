@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PublicacionesService {
-  API_URI = 'http://localhost/3000/api';
+  API_URI = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }
 // Modulos para manejar las publicaciones
