@@ -1,18 +1,27 @@
-<div class="container">
+<div class="login">
     <div class="myform ">
         <h1 class="text-center">Login</h1>
-        <form>
+        <form >
             <div>
                 <label>User </label>
-                <input type="usuario" name="usuario" placeholder="usuario">
+                <input  
+                        type="usuario" 
+                        name="usuario" 
+                        class="formControl" 
+                        #box 
+                        
+                        >
                 
             </div>
             <div>
-                <label>Password </label>
-                <input type="pass" name="pass" placeholder="pass">
+                <label >                  </label>
+            </div>
+            <div>
+                <label >Password </label>
+                <input type="pass" name="pass"  class="passControl" #box2>
                 
             </div>
-            <button type="submit" class="btn" href="/api/home">LOGIN</button>
+            <button  type="button" class="btn" (click)="getValue(box.value)" (click)="getValue2(box2.value)">LOGIN</button>
         </form>
     </div>
 </div>

@@ -1,0 +1,22 @@
+.btn {
+    font-family:cursive;
+    width: 100%;
+    font-weight: 800;
+    background-color: rgb(244, 255, 97);
+    border-radius: 1;
+    padding: 0.5em 0;
+    position: relative;
+  top: 20px;
+  left: auto;
+  }
+  .btn:hover {
+    background-color: inherit;
+    color: rgb(1, 42, 105);
+    border-color: rgb(1, 42, 105);
+  }
+  .formControl{
+    border: 1px solid #000000;
+    position: relative;
+    right: -67px;
+    width: 150px;
+  }

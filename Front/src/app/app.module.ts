@@ -9,7 +9,8 @@ import { LoginComponent } from './components/login/login.component';
 
 import { LoginService } from './services/login.service';
 import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
-
+import { RegisterComponent } from './components/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,12 +18,14 @@ import { PublicacionesComponent } from './components/publicaciones/publicaciones
   declarations: [
     AppComponent,
     LoginComponent,
-    PublicacionesComponent
+    PublicacionesComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     LoginService
