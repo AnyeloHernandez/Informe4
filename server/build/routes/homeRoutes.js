@@ -8,7 +8,11 @@ class HomeRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', homeController_1.homeController.index);
+        this.router.get('/', homeController_1.homeController.list); // Obtiene una publicacion
+        this.router.get('/:id', homeController_1.homeController.getPublicacion); // Obtiene UNA publicacion
+        this.router.post('/', homeController_1.homeController.create); // Crea una nueva publicacion
+        this.router.delete('/:id', homeController_1.homeController.delete); // Elimina una publicacion
+        this.router.put('/:id', homeController_1.homeController.update); // Actualiza una publicacion
     }
 }
 const homeRoutes = new HomeRoutes();

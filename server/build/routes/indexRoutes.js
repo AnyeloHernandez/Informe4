@@ -8,7 +8,11 @@ class IndexRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', indexController_1.indexController.index);
+        this.router.get('/', indexController_1.indexController.list); // Obtiene TODOS login
+        this.router.delete('/:id', indexController_1.indexController.delete); // Elimina un usuario
+        this.router.post('/', indexController_1.indexController.create); // Crea un usuario
+        this.router.put('/:id', indexController_1.indexController.update); // Actualiza un usuario
+        this.router.get('/:id', indexController_1.indexController.getLogin); // Obtiene UN login
     }
 }
 const indexRoutes = new IndexRoutes();

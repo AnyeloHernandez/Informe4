@@ -22,12 +22,12 @@ class Server {
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended: false}));
     }
-
+//  Rutas
     routes(): void {
         this.app.use('/login', indexRoutes);
         this.app.use('/api/home', homeRoutes);
     }
-
+//  Escucha el puerto
     start(): void {
         this.app.listen(this.app.get('port'), () =>{
             console.log('Server on port', this.app.get('port'));

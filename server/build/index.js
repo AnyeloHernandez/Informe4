@@ -21,10 +21,12 @@ class Server {
         this.app.use(express_1.default.json());
         this.app.use(express_1.default.urlencoded({ extended: false }));
     }
+    //  Rutas
     routes() {
         this.app.use('/login', indexRoutes_1.default);
         this.app.use('/api/home', homeRoutes_1.default);
     }
+    //  Escucha el puerto
     start() {
         this.app.listen(this.app.get('port'), () => {
             console.log('Server on port', this.app.get('port'));
