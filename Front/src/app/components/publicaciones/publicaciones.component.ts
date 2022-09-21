@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PublicacionesService } from '../../services/publicaciones.service';
+
 @Component({
   selector: 'app-publicaciones',
   templateUrl: './publicaciones.component.html',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicacionesComponent implements OnInit {
 
-  constructor() { }
+  publicaciones: any = [];
 
-  ngOnInit(): void {
+  constructor(private publicacionesService: PublicacionesService) { }
+
+  ngOnInit() {
+    this.publicacionesService.getPublicaciones().subscribe(
+      res => {
+        this.publicaciones = res;
+      },
+      err => console.log(err)
+    );
   }
 
 }

@@ -13,3 +13,16 @@ CREATE TABLE login(
 );
 
 DESCRIBE login;
+
+USE ng_login_db;
+
+CREATE TABLE publicaciones(
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(20) NOT NULL,
+    curso VARCHAR(100) NOT NULL,
+    catedratico VARCHAR(20) NOT NULL,
+    mensaje VARCHAR(30),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+DESCRIBE publicaciones;
