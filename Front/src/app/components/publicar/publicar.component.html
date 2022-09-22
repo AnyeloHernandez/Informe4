@@ -12,7 +12,7 @@
                 <div class="form-group">
                     <textarea name="mensaje" [(ngModel)]="publicacion.mensaje" placeholder="Mensaje" rows="2" class="form-control"></textarea>
                 </div>
-                <button class="btn btn-success btn-block" (click)="saveNewPublicacion()">
+                <button class="btn btn-success btn-block" (click)="edit ? updatePublicacion() : saveNewPublicacion()">
                     Guardar
                 </button>
             </form>
