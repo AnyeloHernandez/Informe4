@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
    acces: boolean = false;
 
-  //resive valor de las cajas de texto
+  //recibe valor de las cajas de texto
   displayVal='';
   displayVal2='';
   getValue(val:string){

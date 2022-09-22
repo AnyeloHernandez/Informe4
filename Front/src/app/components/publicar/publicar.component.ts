@@ -47,7 +47,7 @@ export class PublicarComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
-          this.router.navigate(['/home'])
+          this.router.navigate(['/home']);
         },
         err => console.error(err)
       )
@@ -59,7 +59,7 @@ export class PublicarComponent implements OnInit {
     .subscribe(
       res => {
         console.log(res);
-        this.router.navigate(['/home'])
+        this.router.navigate(['/home']);
       },
       err => console.error(err)
     )
