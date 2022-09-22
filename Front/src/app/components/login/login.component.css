@@ -2,10 +2,13 @@ h1 {
     font-size: 2.3em;
     font-weight: bold;
     color: black;
+    top: -60px;
+    position: relative;
+    left: -5px;
   }
 .myform {
-/*    font-family:cursive; */
-
+font-family:cursive; 
+  position: relative;
     padding: 100px;
     margin-left: auto;
   margin-right: auto;
@@ -19,14 +22,14 @@ h1 {
 }
 .btn {
     font-family:cursive;
-    width: 100%;
+    width: 250px;
     font-weight: 800;
     background-color: #fff;
     border-radius: 1;
     padding: 0.5em 0;
     position: relative;
   top: 20px;
-  left: auto;
+  left: 3px;
   }
   .btn:hover {
     background-color: inherit;
@@ -49,6 +52,12 @@ h1 {
   right: -32px;
   width: 150px;
   border: 1px solid #000000;
+  }
+
+  .regis{
+    position: relative;
+  top: 90px;
+  left: -80px;
   }
 
  

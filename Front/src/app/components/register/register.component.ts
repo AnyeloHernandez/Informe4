@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
     const nombres = this.registrarUsuario.value.nombres
     const apellidos = this.registrarUsuario.value.apellidos
 
-    
+    console.log(correo,contra,usuario,nombres,apellidos)
   }
 
   
