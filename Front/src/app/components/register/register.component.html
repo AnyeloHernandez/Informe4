@@ -1,0 +1,27 @@
+<div>
+    <form (ngSubmit)="registrar()" [formGroup]="registrarUsuario">
+        <div>
+        <label>correo </label>
+        <input  type="correo" name="correo" class="formControl" formControlName="correo">
+        </div>
+        <div>
+        <label>contra </label>
+        <input  type="contra" name="contra" class="formControl" formControlName="contra">
+    </div>
+    <div>
+        <label>usuario </label>
+        <input  type="usuario" name="usuario" class="formControl" formControlName="usuario">
+    </div>
+    <div>
+                <label>nombres </label>
+        <input  type="nombres" name="nombres" class="formControl" formControlName="nombres">
+    </div><div>
+        <label>apellidos </label>
+        <input  type="apellidos" name="apellidos" class="formControl" formControlName="apellidos">
+    </div>
+
+        <div>
+            <button class="btn" type="submit">Registrar</button>
+        </div>
+    </form>
+</div>
