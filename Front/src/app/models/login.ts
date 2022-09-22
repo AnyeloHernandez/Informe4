@@ -1,4 +1,4 @@
-export interface Publicacion {
+export interface Usuario {
     id?: number;
     usuario: string;
     contrasenna: string;

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-register',
@@ -7,6 +8,11 @@ import { FormGroup, FormBuilder,Validators } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+    @HostBinding('class') classes = 'row';
+
+    
+
+
   registrarUsuario: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -30,7 +36,7 @@ export class RegisterComponent implements OnInit {
     const nombres = this.registrarUsuario.value.nombres
     const apellidos = this.registrarUsuario.value.apellidos
 
-    console.log(correo,contra,usuario,nombres,apellidos)
+    
   }
 
   

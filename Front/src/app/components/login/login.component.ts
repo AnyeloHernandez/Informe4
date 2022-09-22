@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import{LoginService}from'../../services/login.service';
+import{Router} from '@angular/router'
+
 
 
 @Component({
@@ -8,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LoginComponent implements OnInit {
+  usuarios: any=[];
 
-  constructor() { }
-  
+  constructor(private loginService: LoginService  ) {
+    
+   }
+
+
+   acces: boolean = false;
 
   //resive valor de las cajas de texto
   displayVal='';
@@ -27,8 +35,25 @@ export class LoginComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.loginService.getUsers().subscribe(
+      res => {
+        this.usuarios=res;
+      },
+      err=>console.error(err)
+    )
   }
 
+
+  compararUsuarios(){
+    
+    for (const item of this.usuarios){
+      if(item.usuario == this.displayVal && item.contrasenna ==this.displayVal2){
+        this.router.navigate(['/home']);
+      }
+      
+    }
+
+  }
 
 
 }

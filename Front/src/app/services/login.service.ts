@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import{ Usuario } from'../models/login';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +13,13 @@ export class LoginService {
 
   getUsers(){
     return this.http.get(`${this.API_URI}`)
+  }
+
+  getUser(id: string){
+    return this.http.get('${this.API_URI}/login/${id}')
+  }
+
+  saveUser(user: Usuario){
+    return this.http.post('${this.API_URI}/login',user)
   }
 }
