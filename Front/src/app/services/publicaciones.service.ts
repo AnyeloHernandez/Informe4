@@ -19,14 +19,14 @@ export class PublicacionesService {
   }
 
   deletePublicacion(id: string){
-    return this.http.delete(`${this.API_URI}/${id}/home/${id}`)
+    return this.http.delete(`${this.API_URI}/home/${id}`)
   }
 
   createPublicacion(publicacion: Publicacion){    
     return this.http.post(`${this.API_URI}/home`, publicacion);
   }
 
-  updatePublicacion(id: string, updatedGame: Publicacion): Observable<Publicacion>{
-    return this.http.put(`${this.API_URI}/${id}/home/${id}`, updatedGame)
+  updatePublicacion(id: string|number, updatedPublicacion: Publicacion): Observable<Publicacion>{
+    return this.http.put(`${this.API_URI}/home/${id}`, updatedPublicacion)
   }
 }

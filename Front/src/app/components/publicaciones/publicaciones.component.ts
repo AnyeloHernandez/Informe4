@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 import { PublicacionesService } from '../../services/publicaciones.service';
 
@@ -9,24 +9,31 @@ import { PublicacionesService } from '../../services/publicaciones.service';
 })
 export class PublicacionesComponent implements OnInit {
 
+  @HostBinding('class') classes = 'row';
+
   publicaciones: any = [];
 
   constructor(private publicacionesService: PublicacionesService) { }
 
   ngOnInit() {
-    this.publicacionesService.getPublicaciones().subscribe({
-      next: res => {
-        this.publicaciones = res;
-      },
-      error: err => console.log(err)
-/*
-      res => {
-        this.publicaciones = res;
-      },
-      err => console.log(err)
+    this.getPublicaciones();
+    }
+    getPublicaciones(){
+      this.publicacionesService.getPublicaciones().subscribe(
+        res => {
+          this.publicaciones = res;
+        },
+        err => console.log(err)
+      );
+    }
 
-*/
-  });
-  }
-
+    deletePublicacion(id: string) {
+      this.publicacionesService.deletePublicacion(id).subscribe(
+        res => {
+          console.log(res);
+          this.getPublicaciones();
+        },
+        err => console.log(err)
+      );
+    }
 }
