@@ -1,0 +1,21 @@
+<app-navigation></app-navigation>
+<div class="container p-4">
+    <div class="col-md-4 offset-md-4">
+        <div class="card">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="curso" [(ngModel)]="publicacion.curso" placeholder="Curso" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="catedratico" [(ngModel)]="publicacion.catedratico" placeholder="Catedratico" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <textarea name="mensaje" [(ngModel)]="publicacion.mensaje" placeholder="Mensaje" rows="2" class="form-control"></textarea>
+                </div>
+                <button class="btn btn-success btn-block" (click)="saveNewPublicacion()">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
