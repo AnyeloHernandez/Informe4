@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{LoginService}from'../../services/login.service';
-import{Router} from '@angular/router'
+import{Router,ActivatedRoute} from '@angular/router'
 
 
 
@@ -13,7 +13,7 @@ import{Router} from '@angular/router'
 export class LoginComponent implements OnInit {
   usuarios: any=[];
 
-  constructor(private loginService: LoginService  ) {
+  constructor(private loginService: LoginService  , private router: Router, private activatedRoute: ActivatedRoute) {
     
    }
 
