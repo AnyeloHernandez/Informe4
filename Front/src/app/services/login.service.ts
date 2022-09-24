@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import{ Usuario } from'../models/login';
+import{ Login } from'../models/login';
+import { SaveUser } from '../models/regis';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import{ Usuario } from'../models/login';
 export class LoginService {
 
   API_URI = 'http://localhost:3000/login'
+  public nombre_usuario = ''
 
   constructor(private http: HttpClient) { }
 
@@ -16,10 +18,15 @@ export class LoginService {
   }
 
   getUser(id: string){
-    return this.http.get('${this.API_URI}/login/${id}')
+    return this.http.get(`${this.API_URI}/${id}`)
   }
 
-  saveUser(user: Usuario){
-    return this.http.post('${this.API_URI}/login',user)
+  saveUser(user: SaveUser){
+    return this.http.post(`${this.API_URI}`,user)
+  }
+
+  getNombreUsuario(user: any){
+    this.nombre_usuario = user;
+    return user;
   }
 }

@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 import { PublicacionesService } from '../../services/publicaciones.service';
 
@@ -12,11 +13,13 @@ export class PublicacionesComponent implements OnInit {
   @HostBinding('class') classes = 'row';
 
   publicaciones: any = [];
+  nombre_usuario = this.loginService.nombre_usuario;
 
-  constructor(private publicacionesService: PublicacionesService) { }
+  constructor(private publicacionesService: PublicacionesService, private loginService: LoginService) { }
 
   ngOnInit() {
     this.getPublicaciones();
+
     }
     getPublicaciones(){
       this.publicacionesService.getPublicaciones().subscribe(

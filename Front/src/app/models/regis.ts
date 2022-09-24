@@ -1,4 +1,4 @@
-export interface Publicacion {
+export interface SaveUser {
     correo : string;
     contra: string;
     usuario: string;

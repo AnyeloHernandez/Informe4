@@ -2,6 +2,7 @@ import { Component, Host, HostBinding, OnInit } from '@angular/core';
 import { Publicacion } from '../../models/publicacion';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-publicar',
@@ -23,10 +24,10 @@ export class PublicarComponent implements OnInit {
 
   edit: boolean = false;
 
-  constructor(private publicacionesService: PublicacionesService, private router: Router, private activadRoute: ActivatedRoute) { }
+  constructor(private publicacionesService: PublicacionesService, private router: Router, private activatedRoute: ActivatedRoute, private loginService: LoginService) { }
 
   ngOnInit(): void {
-    const params = this.activadRoute.snapshot.params;
+    const params = this.activatedRoute.snapshot.params;
     if (params['id']) {
       this.publicacionesService.getPublicacion(params['id'])
       .subscribe(
@@ -54,7 +55,12 @@ export class PublicarComponent implements OnInit {
   }
 
   updatePublicacion() {
-    delete this.publicacion.created_at;
+    if (this.publicacion.usuario != this.loginService.nombre_usuario) {
+      console.error('No puede editar este mensaje');
+      alert('No puede editar este mensaje porque no es el dueño de la publicación');
+    }else{
+      delete this.publicacion.created_at;
+    this.publicacion.usuario = this.loginService.nombre_usuario;
     this.publicacionesService.updatePublicacion(this.publicacion.id as any, this.publicacion)
     .subscribe(
       res => {
@@ -63,5 +69,7 @@ export class PublicarComponent implements OnInit {
       },
       err => console.error(err)
     )
+    }
+    
   }
 }
