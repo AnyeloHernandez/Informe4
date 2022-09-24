@@ -18,7 +18,7 @@ export class PublicacionesComponent implements OnInit {
   constructor(private publicacionesService: PublicacionesService, private loginService: LoginService) { }
 
   ngOnInit() {
-    this.getPublicaciones();
+    this.getPublicaciones(); // Obtiene las publicaciones cuando se inicia el componente
 
     }
     getPublicaciones(){
@@ -35,6 +35,16 @@ export class PublicacionesComponent implements OnInit {
         res => {
           console.log(res);
           this.getPublicaciones();
+        },
+        err => console.log(err)
+      );
+    }
+
+    searchQuery(curso: string) {
+      this.publicacionesService.searchPublicacion(curso).subscribe(
+        res => {
+          console.log(res);
+          this.publicaciones = res;
         },
         err => console.log(err)
       );

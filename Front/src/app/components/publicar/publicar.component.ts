@@ -44,6 +44,7 @@ export class PublicarComponent implements OnInit {
   saveNewPublicacion() {
     delete this.publicacion.created_at;
     delete this.publicacion.id;
+    this.publicacion.usuario = this.loginService.nombre_usuario; // Asigna el nombre de usuario en la caja de info
     this.publicacionesService.createPublicacion(this.publicacion)
       .subscribe(
         res => {
@@ -60,15 +61,15 @@ export class PublicarComponent implements OnInit {
       alert('No puede editar este mensaje porque no es el dueño de la publicación');
     }else{
       delete this.publicacion.created_at;
-    this.publicacion.usuario = this.loginService.nombre_usuario;
-    this.publicacionesService.updatePublicacion(this.publicacion.id as any, this.publicacion)
-    .subscribe(
-      res => {
-        console.log(res);
-        this.router.navigate(['/home']);
-      },
-      err => console.error(err)
-    )
+      this.publicacion.usuario = this.loginService.nombre_usuario; // Asigna el nombre de usuario en la caja de info
+      this.publicacionesService.updatePublicacion(this.publicacion.id as any, this.publicacion)
+      .subscribe(
+        res => {
+          console.log(res);
+          this.router.navigate(['/home']);
+        },
+        err => console.error(err)
+      )
     }
     
   }

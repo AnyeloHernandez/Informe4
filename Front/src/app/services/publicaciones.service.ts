@@ -15,11 +15,11 @@ export class PublicacionesService {
     return this.http.get(`${this.API_URI}/home`);
   }
   getPublicacion(id: string){
-    return this.http.get(`${this.API_URI}/home/${id}`);
+    return this.http.get(`${this.API_URI}/home/publicacion/${id}`);
   }
 
   deletePublicacion(id: string){
-    return this.http.delete(`${this.API_URI}/home/${id}`)
+    return this.http.delete(`${this.API_URI}/home/publicacion/${id}`)
   }
 
   createPublicacion(publicacion: Publicacion){    
@@ -27,10 +27,10 @@ export class PublicacionesService {
   }
 
   updatePublicacion(id: string|number, updatedPublicacion: Publicacion): Observable<Publicacion>{
-    return this.http.put(`${this.API_URI}/home/${id}`, updatedPublicacion)
+    return this.http.put(`${this.API_URI}/home/publicacion/${id}`, updatedPublicacion)
   }
 
-  searchPublicacion(dato: string) {
-    return this.http.get(`${this.API_URI}/home/search=${dato}`);
+  searchPublicacion(curso: string) {
+    return this.http.get(`${this.API_URI}/home/search=${curso}`);
   }
 }

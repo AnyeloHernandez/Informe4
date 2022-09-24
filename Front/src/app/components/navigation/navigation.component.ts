@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicacionesService } from 'src/app/services/publicaciones.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  publicaciones: any = [];
+
+  constructor(private publicacionesService: PublicacionesService) { }
 
   ngOnInit(): void {
   }
 
-  CerrarSesion() {
-    
+  searchQuery(curso: string) {
+    this.publicacionesService.searchPublicacion(curso).subscribe(
+      res => {
+        console.log(res);
+        this.publicaciones = res;
+      },
+      err => console.log(err)
+    );
   }
-
 }

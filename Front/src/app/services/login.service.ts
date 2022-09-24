@@ -27,6 +27,7 @@ export class LoginService {
 
   getNombreUsuario(user: any){
     this.nombre_usuario = user;
+    console.log(this.nombre_usuario)
     return user;
   }
 }
