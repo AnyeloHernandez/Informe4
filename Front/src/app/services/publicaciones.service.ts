@@ -29,4 +29,8 @@ export class PublicacionesService {
   updatePublicacion(id: string|number, updatedPublicacion: Publicacion): Observable<Publicacion>{
     return this.http.put(`${this.API_URI}/home/${id}`, updatedPublicacion)
   }
+
+  searchPublicacion(dato: string) {
+    return this.http.get(`${this.API_URI}/home/search=${dato}`);
+  }
 }

@@ -23,7 +23,7 @@ public async getPublicacion(req: Request, res: Response): Promise<any>{
 public async create (req: Request, res: Response): Promise<void> { // Indica que aunque se haga un promise no se devuelve nada
     await pool.query('INSERT INTO publicaciones set ?', [req.body]);
     // console.log(req.body);
-    res.json({message: 'Publicacion creada'});
+    res.json({message: 'Publicacion creada'})
 }
 
 //  Eliminar
@@ -39,6 +39,16 @@ public async update(req: Request, res: Response): Promise<void>{
     await pool.query('UPDATE publicaciones set ? WHERE id = ?', [req.body, id]);
     res.json({message: 'Publicacion actualizada'});
 }
+
+public async SearchQuery (req: Request, res: Response) {
+    const { curso } = req.params;
+    // console.log(`%${curso}%`);
+    const publicaciones = await pool.query('SELECT * FROM publicaciones WHERE curso LIKE ?', [`%${curso}%`]);
+    console.log(publicaciones);
+    res.json(publicaciones);
+}
+
+
 }
 
 
