@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class PublicacionesService {
   API_URI = 'http://localhost:3000/api';
+  publicaciones: any = [];
+  public dato = '';
 
   constructor(private http: HttpClient) { }
 // Modulos para manejar las publicaciones

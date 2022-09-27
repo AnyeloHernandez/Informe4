@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicacionesService } from 'src/app/services/publicaciones.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -8,20 +9,22 @@ import { PublicacionesService } from 'src/app/services/publicaciones.service';
 })
 export class NavigationComponent implements OnInit {
 
-  publicaciones: any = [];
+  public publicaciones: any = [];
 
-  constructor(private publicacionesService: PublicacionesService) { }
+  constructor(private publicacionesService: PublicacionesService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
-  searchQuery(curso: string) {
-    this.publicacionesService.searchPublicacion(curso).subscribe(
-      res => {
-        console.log(res);
-        this.publicaciones = res;
-      },
-      err => console.log(err)
-    );
+  navigateSearch(curso: string) {
+    this.publicacionesService.dato = curso;
+    console.log(this.publicacionesService.dato)
+    this.router.navigate([`/home/search/${curso}`]);
+    
   }
+
+  refresh(): void{
+    window.location.reload();
+  }
+
 }

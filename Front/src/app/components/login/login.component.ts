@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import{Router,ActivatedRoute} from '@angular/router'
 import { isNgTemplate } from '@angular/compiler';
@@ -13,8 +13,9 @@ import { isNgTemplate } from '@angular/compiler';
 
 export class LoginComponent implements OnInit {
   usuarios: any=[];
-
+  
   nombre_usuario = '';
+  
 
   constructor(private loginService: LoginService  , private router: Router, private activatedRoute: ActivatedRoute) {
     
@@ -51,11 +52,13 @@ export class LoginComponent implements OnInit {
     for (const item of this.usuarios){
       if(item.usuario == this.displayVal && item.contrasenna ==this.displayVal2){
         this.loginService.getNombreUsuario(item.usuario);
+        
         this.router.navigate(['/home']);
       }
       
     }
   }
 }
+
 
 

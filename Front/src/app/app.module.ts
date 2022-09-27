@@ -15,6 +15,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 
 import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
+import { PublicacionesService } from './services/publicaciones.service';
 
 
 
@@ -27,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PublicacionesComponent,
     PublicarComponent,
     NavigationComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [
-    LoginService
+    LoginService,
+    PublicacionesService,
+    NavigationComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component'
 import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
 import { PublicarComponent } from './components/publicar/publicar.component';
 import { RegisterComponent } from './components/register/register.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'regis',
     component: RegisterComponent
+  },
+  {
+    path: 'home/search/:dato',
+    component: SearchComponent
   }
 ];
 
