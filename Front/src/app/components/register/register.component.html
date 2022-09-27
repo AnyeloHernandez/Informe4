@@ -1,27 +1,32 @@
-<div>
-    <form (ngSubmit)="registrar()" [formGroup]="registrarUsuario">
-        <div>
-        <label>correo </label>
-        <input  type="correo" name="correo" class="formControl" formControlName="correo">
-        </div>
-        <div>
-        <label>contra </label>
-        <input  type="contra" name="contra" class="formControl" formControlName="contra">
+<div class="row">
+    <button class="bt btn-success btn-block" routerLink="/">Regresar </button>
+    <div class="col-md-4 offset-md-4">
+        
+            <div class="card-body">
+                <form action="">
+                    
+                    <div class="form-group">
+                        <input type="text" name="correo"  [(ngModel)]="registro.correo" placeholder="correo" class="form-contrl" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="contrasenna" [(ngModel)]="registro.contrasenna" placeholder="contrasenna" class="form-contrl" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="usuario" [(ngModel)]="registro.usuario" placeholder="usuario" class="form-contrl" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nombres" [(ngModel)]="registro.nombres" placeholder="nombres" class="form-contrl" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="apellidos"  [(ngModel)]="registro.apellidos" placeholder="apellidos" class="form-contrl" autofocus>
+                    </div>
+                    <button class="bt btn-success btn-block" (click)="saveUsuario()"> Registrar </button> 
+                    <label></label>  
+                    
+                </form>
+                
+            </div>
+            
+        
     </div>
-    <div>
-        <label>usuario </label>
-        <input  type="usuario" name="usuario" class="formControl" formControlName="usuario">
-    </div>
-    <div>
-                <label>nombres </label>
-        <input  type="nombres" name="nombres" class="formControl" formControlName="nombres">
-    </div><div>
-        <label>apellidos </label>
-        <input  type="apellidos" name="apellidos" class="formControl" formControlName="apellidos">
-    </div>
-
-        <div>
-            <button class="btn" type="submit">Registrar</button>
-        </div>
-    </form>
 </div>

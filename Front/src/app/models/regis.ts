@@ -1,6 +1,6 @@
 export interface SaveUser {
     correo : string;
-    contra: string;
+    contrasenna: string;
     usuario: string;
     nombres: string;
     apellidos: string;
