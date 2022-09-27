@@ -28,7 +28,7 @@ font-family:cursive;
     border-radius: 1;
     padding: 0.5em 0;
     position: relative;
-  top: 20px;
+  top: 40px;
   left: 3px;
   }
   .btn:hover {
@@ -56,8 +56,16 @@ font-family:cursive;
 
   .regis{
     position: relative;
-  top: 90px;
-  left: -80px;
+  top: 110px;
+  left: -40px;
   }
+  .divcontra{
+    position: relative;
+    top: -40px;
+    left: 100px;
+    max-width: 100%;
+    font-size: 13px;
+  }
+  
 
  

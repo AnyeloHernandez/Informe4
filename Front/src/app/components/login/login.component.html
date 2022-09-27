@@ -3,8 +3,8 @@
 <div class="login">
     <div class="myform ">
         <h1 class="text-center">Iniciar Sesion</h1>
-        <form >
-            <div>
+        <form class="inputs">
+            <div >
                 <label>User </label>
                 <input  
                         type="usuario" 
@@ -22,9 +22,10 @@
                 <label >Password </label>
                 <input type="pass" name="pass"  class="passControl" #box2>
                 <A class="regis" routerLink="/regis">Registrar</A>
+                
             </div>
             <button  type="button" class="btn" (click)="getValue(box.value)" (click)="getValue2(box2.value)" (click)="compararUsuarios()">LOGIN</button>
-
+            <div class="divcontra"><A class="contraOlvidada" routerLink="" >Contraseña Olvidada?</A></div>
             
         </form>
     </div>
