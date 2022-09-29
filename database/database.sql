@@ -20,8 +20,8 @@ CREATE TABLE publicaciones(
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     usuario VARCHAR(20) NOT NULL,
     curso VARCHAR(100) NOT NULL,
-    catedratico VARCHAR(20) NOT NULL,
-    mensaje VARCHAR(30),
+    catedratico VARCHAR(100) NOT NULL,
+    mensaje VARCHAR(256),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

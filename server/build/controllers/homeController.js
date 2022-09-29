@@ -62,7 +62,7 @@ class HomeController {
         return __awaiter(this, void 0, void 0, function* () {
             const { curso } = req.params;
             // console.log(`%${curso}%`);
-            const publicaciones = yield database_1.default.query('SELECT * FROM publicaciones WHERE curso LIKE ?', [`%${curso}%`]);
+            const publicaciones = yield database_1.default.query('SELECT * FROM publicaciones WHERE curso LIKE ? or catedratico LIKE ? or mensaje LIKE ?', [`%${curso}%`, `%${curso}%`, `%${curso}%`]);
             console.log(publicaciones);
             res.json(publicaciones);
         });

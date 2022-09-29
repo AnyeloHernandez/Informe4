@@ -12,12 +12,13 @@ export class SearchComponent implements OnInit {
   @HostBinding('class') classes = 'row';
   
   publicaciones: any = [];
+  reload = true;
 
   constructor(private publicacionesService: PublicacionesService, private navigationComponent: NavigationComponent) { }
 
   ngOnInit(): void {
     // console.log(this.publicacionesService.dato)
-    window.location.reload;
+    
     this.searchQuery(this.publicacionesService.dato);
   }
 

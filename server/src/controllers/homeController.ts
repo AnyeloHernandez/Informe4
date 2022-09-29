@@ -43,7 +43,7 @@ public async update(req: Request, res: Response): Promise<void>{
 public async SearchQuery (req: Request, res: Response) {
     const { curso } = req.params;
     // console.log(`%${curso}%`);
-    const publicaciones = await pool.query('SELECT * FROM publicaciones WHERE curso LIKE ?', [`%${curso}%`]);
+    const publicaciones = await pool.query('SELECT * FROM publicaciones WHERE curso LIKE ? or catedratico LIKE ? or mensaje LIKE ?', [`%${curso}%`, `%${curso}%`, `%${curso}%`]);
     console.log(publicaciones);
     res.json(publicaciones);
 }

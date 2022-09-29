@@ -28,7 +28,7 @@ font-family:cursive;
     border-radius: 1;
     padding: 0.5em 0;
     position: relative;
-  top: 40px;
+  top: 20px;
   left: 3px;
   }
   .btn:hover {
@@ -49,19 +49,19 @@ font-family:cursive;
   .passControl{
     position: relative;
   bottom: 10;
-  right: -32px;
+  right: -36px;
   width: 150px;
   border: 1px solid #000000;
   }
 
   .regis{
     position: relative;
-  top: 110px;
-  left: -40px;
+  top: -10px;
+  left: 110px;
   }
   .divcontra{
     position: relative;
-    top: -40px;
+    top: -50px;
     left: 100px;
     max-width: 100%;
     font-size: 13px;

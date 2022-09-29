@@ -1,0 +1,14 @@
+.container{
+    line-height: normal;
+    vertical-align: middle;
+    top: 20px;
+    font-size: 17px;
+  }
+
+.card{
+    width: 500px;
+    height: auto 250px;
+    margin: 50px;
+    display: flex;
+    text-align: center;
+}

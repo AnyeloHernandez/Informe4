@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
   compararUsuarios(){
     for (const item of this.usuarios){
       if(item.usuario == this.displayVal && item.contrasenna ==this.displayVal2){
-        this.loginService.getNombreUsuario(item.usuario);
+        this.loginService.nombre_usuario = item.usuario;
         
         this.router.navigate(['/home']);
       }

@@ -21,11 +21,4 @@ export class LoginService {
     return this.http.get(`${this.API_URI}/${id}`)
   }
 
-  
-
-  getNombreUsuario(user: any){
-    this.nombre_usuario = user;
-    console.log(this.nombre_usuario)
-    return user;
-  }
 }
