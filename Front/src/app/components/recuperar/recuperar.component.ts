@@ -11,5 +11,6 @@ export class RecuperarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
 }

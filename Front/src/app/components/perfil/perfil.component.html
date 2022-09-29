@@ -1,19 +1,21 @@
-<p>perfil works!</p>
 <app-navigation></app-navigation>
 <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Usuario: {{ nombre_usuario }}</h5>
       <p class="card-text">
-        
+        Nombres: {{ datos.nombres }} <br>
+        Apellidos: {{ datos.apellidos }}  <br>
+        Correo: {{ datos.correo }}<br>
       </p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
+      <li class="list-group-item"><b>CURSOS GANADOS:</b></li>
+      <div ngForm="let curso of cursos">
+        <li class="list-group-item">curso 1</li>
+        <li class="list-group-item">curso 2</li>
+      </div>
     </ul>
     <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <a class="card-link">Editar perfil</a>
     </div>
   </div>
