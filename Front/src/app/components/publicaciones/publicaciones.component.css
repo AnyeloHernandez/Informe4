@@ -12,3 +12,11 @@
     display: flex;
     text-align: center;
 }
+
+.perfil:hover{
+    color: blue;
+}
+
+.perfil {
+    color: white;
+}

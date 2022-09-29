@@ -18,6 +18,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
 import { PublicacionesService } from './services/publicaciones.service';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { RecuperarComponent } from './components/recuperar/recuperar.component';
 
 
 
@@ -31,7 +33,9 @@ import { PublicacionesService } from './services/publicaciones.service';
     PublicarComponent,
     NavigationComponent,
     RegisterComponent,
-    SearchComponent
+    SearchComponent,
+    PerfilComponent,
+    RecuperarComponent
   ],
   imports: [
     BrowserModule,

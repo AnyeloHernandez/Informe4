@@ -1,4 +1,5 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { trigger } from '@angular/animations';
+import { Component, HostBinding, Injectable, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 
 import { PublicacionesService } from '../../services/publicaciones.service';
@@ -8,6 +9,7 @@ import { PublicacionesService } from '../../services/publicaciones.service';
   templateUrl: './publicaciones.component.html',
   styleUrls: ['./publicaciones.component.css']
 })
+
 export class PublicacionesComponent implements OnInit {
 
   @HostBinding('class') classes = 'row';
