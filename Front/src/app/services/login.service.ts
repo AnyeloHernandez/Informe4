@@ -10,6 +10,7 @@ export class LoginService {
 
   API_URI = 'http://localhost:3000/login'
   public nombre_usuario = ''
+  public id_usuario = '';
 
   constructor(private http: HttpClient) { }
 
@@ -17,8 +18,8 @@ export class LoginService {
     return this.http.get(`${this.API_URI}`)
   }
 
-  getUser(id: string){
-    return this.http.get(`${this.API_URI}/${id}`)
+  getUser(nombre: string){
+    return this.http.get(`${this.API_URI}/usuario/${nombre}`)
   }
 
 }

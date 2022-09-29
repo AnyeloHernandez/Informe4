@@ -61,5 +61,16 @@ class IndexController {
             res.json({ message: 'Usuario actualizado' });
         });
     }
+    //  Obtener UN usuario
+    getUser(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { usuario } = req.params;
+            const login = yield database_1.default.query('SELECT * FROM login WHERE usuario = ?', [usuario]);
+            if (login.length > 0) {
+                return res.json(login[0]);
+            }
+            res.status(404).json({ text: "El usuario no existe" });
+        });
+    }
 }
 exports.indexController = new IndexController();

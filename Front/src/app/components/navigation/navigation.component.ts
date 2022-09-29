@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicacionesService } from 'src/app/services/publicaciones.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-navigation',
@@ -10,10 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
 
   public publicaciones: any = [];
+  perfilid = '';
 
-  constructor(private publicacionesService: PublicacionesService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private publicacionesService: PublicacionesService, private router: Router, private activatedRoute: ActivatedRoute, private loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.perfilid = this.loginService.id_usuario;
   }
 
   navigateSearch(curso: string) {

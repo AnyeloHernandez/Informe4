@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     for (const item of this.usuarios){
       if(item.usuario == this.displayVal && item.contrasenna ==this.displayVal2){
         this.loginService.nombre_usuario = item.usuario;
-        
+        this.loginService.id_usuario = item.id;
         this.router.navigate(['/home']);
       }
       

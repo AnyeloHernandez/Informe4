@@ -43,6 +43,19 @@ class IndexController {
         await pool.query('UPDATE login set ? WHERE id = ?', [req.body, id]);
         res.json({message: 'Usuario actualizado'});
     }
+
+//  Obtener UN usuario
+    public async getUser(req: Request, res: Response){
+        const { usuario } = req.params;
+        const login = await pool.query('SELECT * FROM login WHERE usuario = ?', [usuario]);
+        if (login.length > 0) {
+            return res.json(login[0]);
+        }
+        res.status(404).json({text: "El usuario no existe"});
+    }
+    
 }
+
+
 
 export const indexController = new IndexController();

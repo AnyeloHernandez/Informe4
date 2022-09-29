@@ -35,6 +35,7 @@ publicacion: Publicacion = {
       .subscribe(
         res =>{
           this.publicacion = res;
+          console.log(res)
           this.getUsuario();
         },
         err => console.error(err)
@@ -45,9 +46,9 @@ publicacion: Publicacion = {
 
   getUsuario(){
     // obtiene los datos del usuario
-    const id = this.publicacion.id as any;
-    console.log(id)
-    this.loginService.getUser(id)
+    const user = this.publicacion.usuario as any;
+    console.log(user)
+    this.loginService.getUser(user)
     .subscribe(
       res => {
         this.datos = res;

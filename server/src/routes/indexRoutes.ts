@@ -15,6 +15,7 @@ class IndexRoutes {
         this.router.post('/', indexController.create); // Crea un usuario
         this.router.put('/:id', indexController.update); // Actualiza un usuario
         this.router.get('/:id', indexController.getLogin); // Obtiene UN login
+        this.router.get('/usuario/:usuario', indexController.getUser); // Obtiene un usuario solo por nombre
     }
 
 }

@@ -13,6 +13,7 @@ class IndexRoutes {
         this.router.post('/', indexController_1.indexController.create); // Crea un usuario
         this.router.put('/:id', indexController_1.indexController.update); // Actualiza un usuario
         this.router.get('/:id', indexController_1.indexController.getLogin); // Obtiene UN login
+        this.router.get('/usuario/:usuario', indexController_1.indexController.getUser); // Obtiene un usuario solo por nombre
     }
 }
 const indexRoutes = new IndexRoutes();
