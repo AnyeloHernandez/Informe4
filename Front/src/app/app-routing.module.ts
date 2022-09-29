@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { SearchComponent } from './components/search/search.component';
 
 
+
 const routes: Routes = [
   {
     path: '',
@@ -40,6 +41,10 @@ const routes: Routes = [
   },
   {
     path: 'perfil/:id',
+    component: PerfilComponent
+  },
+  {
+    path: 'recuperar',
     component: PerfilComponent
   }
 ];
