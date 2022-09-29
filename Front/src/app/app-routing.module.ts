@@ -5,6 +5,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
 import { PublicarComponent } from './components/publicar/publicar.component';
 import { RegisterComponent } from './components/register/register.component';
+import{ RecuperarComponent } from './components/recuperar/recuperar.component'
 import { SearchComponent } from './components/search/search.component';
 
 
@@ -45,7 +46,7 @@ const routes: Routes = [
   },
   {
     path: 'recuperar',
-    component: PerfilComponent
+    component: RecuperarComponent
   }
 ];
 
