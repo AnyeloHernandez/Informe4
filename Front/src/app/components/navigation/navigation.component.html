@@ -19,7 +19,7 @@
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #box>
           <button class="btn btn-outline-success" type="submit" (click)="navigateSearch(box.value)">Buscar</button>
         </form>
-        <button type="button" class="btn btn-light" [routerLink]="['/perfil', publicaciones.id]">Cerrar Sesión <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        <button type="button" class="btn btn-light" routerLink="/">Cerrar Sesión <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
       </div>
     </div>
   </nav>
