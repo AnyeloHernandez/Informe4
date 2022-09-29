@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import{ Login } from'../models/login';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -21,4 +23,5 @@ export class LoginService {
     return this.http.get(`${this.API_URI}/${id}`)
   }
 
+ 
 }
